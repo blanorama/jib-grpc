@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "org.acme";
+option java_outer_classname = "SlimGrpcProto";
+
+package slim;
+
+service SlimGrpc {
+  rpc HelloSlim (SlimRequest) returns (SlimReply) {}
+}
+
+message SlimRequest {
+  string name = 1;
+}
+
+message SlimReply {
+  string message = 1;
+}
