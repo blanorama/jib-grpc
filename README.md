@@ -1,6 +1,6 @@
-# Demo project for testing test JIB and gRPC
+# Demo project for containerizing Java with Quarkus and JIB
 
-This project uses Quarkus, the Supersonic Subatomic Java Framework.
+This project uses Quarkus, the Supersonic Subatomic Java Framework and provides a gRPC endpoint for testing purposes.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
 
