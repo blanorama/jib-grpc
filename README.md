@@ -1,3 +1,5 @@
+[![JIB-Java CI with Maven](https://github.com/lecodeski/jib-quarkus/actions/workflows/quarkus-jib.yml/badge.svg)](https://github.com/lecodeski/jib-quarkus/actions/workflows/quarkus-jib.yml)
+
 # Demo project for containerizing Java with Quarkus and JIB
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework and provides a gRPC endpoint for testing purposes.
