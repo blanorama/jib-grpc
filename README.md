@@ -1,4 +1,4 @@
-[![JIB-Java CI with Maven](https://github.com/lecodeski/jib-quarkus/actions/workflows/quarkus-jib.yml/badge.svg)](https://github.com/lecodeski/jib-quarkus/actions/workflows/quarkus-jib.yml)
+[![JIB-Java CI with Maven](https://github.com/lecodeski/jib-quarkus/actions/workflows/quarkus-jib.yaml/badge.svg)](https://github.com/lecodeski/jib-quarkus/actions/workflows/quarkus-jib.yaml)
 
 # Demo project for containerizing Java with Quarkus and JIB
 
