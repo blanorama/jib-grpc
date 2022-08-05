@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  QUARKUS_BUILD_OPTS:
+  JIB_BUILD_OPTS:
     -Dquarkus.container-image.build=true
     -Dquarkus.container-image.push=true
     -Dquarkus.container-image.registry=ghcr.io
@@ -45,4 +45,4 @@ jobs:
           components: 'native-image'
 
       - name: Build with Jib-Quarkus and Maven
-        run: mvn -B package -Pnative $QUARKUS_BUILD_OPTS
+        run: mvn -B package -Pnative $JIB_BUILD_OPTS
