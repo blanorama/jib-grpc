@@ -1,20 +1,14 @@
 # This workflow will build a Quarkus Native project with Maven and Jib.
-# It has cache/restore any dependencies to improve the workflow execution time.
+# It caches/restores any maven dependency to improve the workflow execution time.
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Quarkus Native CI with Maven, GraalVM and Jib
+name: quarkus-native-docker
 
 on: [ push, pull_request, workflow_dispatch ]
 
 env:
-  JIB_BUILD_OPTS:
-    -Dquarkus.container-image.build=true
-    -Dquarkus.container-image.push=true
-    -Dquarkus.container-image.registry=ghcr.io
-    -Dquarkus.container-image.group=${{ github.actor }}
-    -Dquarkus.container-image.username=${{ github.actor }}
-    -Dquarkus.container-image.password=${{ secrets.GITHUB_TOKEN }}
-    -Dquarkus.jib.base-native-image=quay.io/quarkus/quarkus-distroless-image:1.0
+  CI_REGISTRY: ghcr.io
+  IMAGE_PATH: ${{ github.actor }}/quarkus-native-docker:0.15.10
 
 jobs:
   build:
@@ -40,5 +34,14 @@ jobs:
           java-version: '17'
           components: 'native-image'
 
-      - name: Build Quarkus Native with Maven, GraalVM and Jib
-        run: mvn -B package -Pnative $JIB_BUILD_OPTS
+      - name: Login to Docker
+        run: docker login -u ${{ github.actor }} -p ${{ secrets.GITHUB_TOKEN }} $CI_REGISTRY
+
+      - name: Build Quarkus Native with Maven
+        run: mvn package -Dnative
+
+      - name: Build container image with Docker
+        run: docker build -f src/main/docker/Dockerfile.native-micro -t $CI_REGISTRY/$IMAGE_PATH .
+
+      - name: Push image build to registry
+        run: docker push $CI_REGISTRY/$IMAGE_PATH
