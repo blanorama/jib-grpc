@@ -13,6 +13,6 @@ public class GreetingSlim {
   @Produces(MediaType.TEXT_PLAIN)
   @Path("/{name}")
   public String hello(@PathParam("name") final String name) {
-    return "Your Name is what? Your name is who? Your name is: Slim" + name + "!";
+    return "Hi, your Name is what? Your name is who? Your name is: Slim" + name + "!";
   }
 }

@@ -15,6 +15,6 @@ public class GreetingSlimTest {
         .when().get("/hello/Shady")
         .then()
         .statusCode(200)
-        .body(is("Your Name is what? Your name is who? Your name is: SlimShady!"));
+        .body(is("Hi, your Name is what? Your name is who? Your name is: SlimShady!"));
   }
 }
