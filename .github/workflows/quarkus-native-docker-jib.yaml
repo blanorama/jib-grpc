@@ -2,7 +2,7 @@
 # It has cache/restore any dependencies to improve the workflow execution time.
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Quarkus Native CI with Maven, GraalVM and Jib
+name: Quarkus Native CI with Maven, Docker and Jib
 
 on: [ push, pull_request, workflow_dispatch ]
 
@@ -33,12 +33,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: GitHub Action for setting up GraalVM
-        uses: graalvm/setup-graalvm@v1
-        with:
-          version: 'latest'
-          java-version: '17'
-          components: 'native-image'
-
-      - name: Build Quarkus Native with Maven, GraalVM and Jib
-        run: mvn -B package -Pnative $JIB_BUILD_OPTS
+      - name: Build Quarkus Native with Maven, Docker and Jib
+        run: mvn -B package -Pnative -Dquarkus.native.container-build=true $JIB_BUILD_OPTS

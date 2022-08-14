@@ -1,6 +1,6 @@
-[![CI workflow badge](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-graalvm-jib.yaml/badge.svg)](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-graalvm-jib.yaml)
+[![CI workflow badge](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-docker-jib.yaml/badge.svg)](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-docker-jib.yaml)
 
-# Demo project for containerizing Java with Quarkus Native, GraalVM and Jib
+# Demo project for containerizing Java with Quarkus Native, Docker and Jib
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework and provides a gRPC endpoint for testing purposes.
 
