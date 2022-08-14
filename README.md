@@ -1,10 +1,12 @@
-[![CI workflow badge](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-docker-jib.yaml/badge.svg)](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-docker-jib.yaml)
+[![CI workflow badge](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-jib.yaml/badge.svg)](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-jib.yaml)
 
-# Demo project for containerizing Java with Quarkus Native, Docker and Jib
+# Demo project for containerizing Java with Quarkus and Jib
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework and provides a gRPC endpoint for testing purposes.
 
 If you want to learn more about Quarkus, please visit its website: https://quarkus.io/ .
+
+> **_NOTE:_**  One can find additional build architecture alternatives in different branches in this repository.
 
 ## Running the application in dev mode
 

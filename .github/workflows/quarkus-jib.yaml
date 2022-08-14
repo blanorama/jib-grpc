@@ -1,8 +1,8 @@
 # This workflow will build a Quarkus Native project with Maven and Jib.
-# It has cache/restore any dependencies to improve the workflow execution time.
+# It caches/restores any maven dependency to improve the workflow execution time.
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: Quarkus Native CI with Maven, Docker and Jib
+name: quarkus-jib
 
 on: [ push, pull_request, workflow_dispatch ]
 
@@ -14,7 +14,6 @@ env:
     -Dquarkus.container-image.group=${{ github.actor }}
     -Dquarkus.container-image.username=${{ github.actor }}
     -Dquarkus.container-image.password=${{ secrets.GITHUB_TOKEN }}
-    -Dquarkus.jib.base-native-image=quay.io/quarkus/quarkus-distroless-image:1.0
 
 jobs:
   build:
@@ -33,5 +32,5 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Build Quarkus Native with Maven, Docker and Jib
-        run: mvn -B package -Pnative -Dquarkus.native.container-build=true $JIB_BUILD_OPTS
+      - name: Build Quarkus with Maven and Jib
+        run: mvn -B package $JIB_BUILD_OPTS

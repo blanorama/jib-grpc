@@ -4,8 +4,8 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.acme</groupId>
-    <artifactId>quarkus-native-docker-jib</artifactId>
-    <version>0.13.10</version>
+    <artifactId>quarkus-jib</artifactId>
+    <version>0.14.10</version>
     <properties>
         <compiler-plugin.version>3.8.1</compiler-plugin.version>
         <failsafe.useModulePath>false</failsafe.useModulePath>
