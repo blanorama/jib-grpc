@@ -1,18 +1,16 @@
 package org.acme;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Path("/hello")
+@RestController
+@RequestMapping("hello")
 public class GreetingSlim {
 
-  @GET
-  @Produces(MediaType.TEXT_PLAIN)
-  @Path("/{name}")
-  public String hello(@PathParam("name") final String name) {
+  @GetMapping("/{name}")
+  public String hello(@PathVariable("name") final String name) {
     return "Hi, your Name is what? Your name is who? Your name is: Slim" + name + "!";
   }
 }
