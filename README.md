@@ -1,6 +1,6 @@
 [![CI workflow badge](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-docker-jib.yaml/badge.svg)](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-docker-jib.yaml)
 
-# Demo project for containerizing Java with Quarkus Native, GraalVM in Docker and Jib
+# Demo project for containerizing Java with Quarkus Native, Mandrel in Docker and Jib
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework and provides a gRPC endpoint for testing purposes.
 
@@ -47,7 +47,7 @@ You can create a native executable using:
 ./mvnw package -Pnative
 ```
 
-Or, if you don't have GraalVM installed, you can run the native executable build in a container using:
+Or, if you don't have Mandrel installed, you can run the native executable build in a container using:
 
 ```shell script
 ./mvnw package -Pnative -Dquarkus.native.container-build=true

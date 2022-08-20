@@ -1,13 +1,15 @@
 # This workflow will build a Quarkus Native project with Maven and Jib.
-# It has cache/restore any dependencies to improve the workflow execution time.
+# It caches/restores any maven dependency to improve the workflow execution time.
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: quarkus-native-graal-in-docker-jib
+name: quarkus-native-mandrel-in-docker-jib
 
 on: [ push, pull_request, workflow_dispatch ]
 
 env:
   JIB_BUILD_OPTS:
+    -Dquarkus.native.container-build=true
+    -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel:22.2-java17
     -Dquarkus.container-image.build=true
     -Dquarkus.container-image.push=true
     -Dquarkus.container-image.registry=ghcr.io
