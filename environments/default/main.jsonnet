@@ -9,7 +9,7 @@ local httpIngressPath = k.networking.v1.httpIngressPath;
 {
   _config:: {
     local config = self,
-    domain: 'otlp_quarkus.mayflower.cloud',
+    domain: 'otlp-quarkus.mayflower.cloud',
     tag: 'latest',
     service: {
       name: 'otlp_quarkus',
