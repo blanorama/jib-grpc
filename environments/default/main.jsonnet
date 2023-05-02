@@ -45,13 +45,8 @@ local httpIngressPath = k.networking.v1.httpIngressPath;
         httpIngressPath.withPath('/')
         + httpIngressPath.withPathType('Prefix')
         + httpIngressPath.backend.service.withName(cfg.name)
-        + httpIngressPath.backend.service.port.withName(portName)
-      )
-      + ingressRule.http.withPaths(
-        httpIngressPath.withPath('/')
-        + httpIngressPath.withPathType('Prefix')
-        + httpIngressPath.backend.service.withName(cfg.name)
-        + httpIngressPath.backend.service.port.withName(portName)
+        + httpIngressPath.backend.service.port.withName(portREST)
+        + httpIngressPath.backend.service.port.withName(portGRPC)
       )
     ),
   },
