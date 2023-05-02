@@ -7,7 +7,7 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("/hello")
-public class GreetingSlim {
+public class Controller {
 
   @GET
   @Produces(MediaType.TEXT_PLAIN)
