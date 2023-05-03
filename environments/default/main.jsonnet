@@ -12,7 +12,7 @@ local httpIngressPath = k.networking.v1.httpIngressPath;
     domain: 'otlp-quarkus.mayflower.cloud',
     tag: std.extVar('commit_hash'),
     service: {
-      name: 'otlp_quarkus',
+      name: 'otlp-quarkus',
       domain: config.domain,
       image: 'ghcr.io/lecodeski/quarkus-native-mandrel-jib-otlp:%s' % config.tag,
     },
@@ -25,7 +25,7 @@ local httpIngressPath = k.networking.v1.httpIngressPath;
       name=cfg.name,
       replicas=1,
       containers=[
-        container.new('otlp_quarkus', cfg.image)
+        container.new(cfg.name, cfg.image)
         + container.withPorts([port.new(portREST, 8080), port.new(portGRPC, 9000)])
       ],
     ),
