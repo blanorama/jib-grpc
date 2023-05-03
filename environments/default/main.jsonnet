@@ -20,7 +20,7 @@ local httpIngressPath = k.networking.v1.httpIngressPath;
   microservice: {
     local cfg = $._config.service,
     local portREST = 'rest',
-    local portGRPC = 'gRPC',
+    local portGRPC = 'grpc',
     deployment: deployment.new(
       name=cfg.name,
       replicas=1,
