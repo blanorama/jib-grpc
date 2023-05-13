@@ -61,3 +61,6 @@ nb-configuration.xml
 
 # Local environment
 .env
+
+#jsonnet
+vendor
