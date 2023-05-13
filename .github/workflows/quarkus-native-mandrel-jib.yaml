@@ -37,7 +37,7 @@ jobs:
         uses: graalvm/setup-graalvm@v1
         with:
           version: 'mandrel-latest'
-          java-version: '17'
+          java-version: '19'
           cache: 'maven'
 
       - name: Build Quarkus Native with Maven, Mandrel and Jib
