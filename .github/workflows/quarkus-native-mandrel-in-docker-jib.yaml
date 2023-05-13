@@ -35,5 +35,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
-      - name: Build Quarkus Native with Maven, Docker and Jib
+      - name: GitHub Action for setting up Mandrel
+        uses: graalvm/setup-graalvm@v1
+        with:
+          version: 'mandrel-latest'
+          java-version: '17'
+          cache: 'maven'
+
+      - name: Build Quarkus Native with Maven, Mandrel, Docker and Jib
         run: mvn -B package -Dnative $JIB_BUILD_OPTS
