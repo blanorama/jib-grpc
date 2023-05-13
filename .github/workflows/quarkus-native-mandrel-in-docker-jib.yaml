@@ -16,7 +16,7 @@ env:
     -Dquarkus.container-image.group=${{ github.actor }}
     -Dquarkus.container-image.username=${{ github.actor }}
     -Dquarkus.container-image.password=${{ secrets.GITHUB_TOKEN }}
-    -Dquarkus.jib.base-native-image=quay.io/quarkus/quarkus-distroless-image:1.0
+    -Dquarkus.jib.base-native-image=quay.io/quarkus/quarkus-distroless-image:2.0
 
 jobs:
   build:
