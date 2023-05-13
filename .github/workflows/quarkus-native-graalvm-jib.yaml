@@ -39,6 +39,7 @@ jobs:
           version: 'latest'
           java-version: '17'
           components: 'native-image'
+          cache: 'maven'
 
       - name: Build Quarkus Native with Maven, GraalVM and Jib
         run: mvn -B package -Dnative $JIB_BUILD_OPTS
