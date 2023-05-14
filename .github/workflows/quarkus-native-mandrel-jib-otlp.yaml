@@ -14,7 +14,7 @@ env:
     -Dquarkus.container-image.group=${{ github.actor }}
     -Dquarkus.container-image.username=${{ github.actor }}
     -Dquarkus.container-image.password=${{ secrets.GITHUB_TOKEN }}
-    -Dquarkus.jib.base-native-image=quay.io/quarkus/quarkus-distroless-image:1.0
+    -Dquarkus.jib.base-native-image=quay.io/quarkus/quarkus-distroless-image:2.0
 
 jobs:
   build:
@@ -23,10 +23,10 @@ jobs:
 
     steps:
       - name: Checkout Repo
-        uses: actions/checkout@v3.0.2
+        uses: actions/checkout@v3
 
       - name: Cache local Maven repository
-        uses: actions/cache@v3.0.4
+        uses: actions/cache@v3
         with:
           path: ~/.m2/repository
           key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
@@ -36,8 +36,9 @@ jobs:
       - name: GitHub Action for setting up Mandrel
         uses: graalvm/setup-graalvm@v1
         with:
-          version: 'mandrel-latest'
+          version: 'mandrel-22.2.0.0-Final'
           java-version: '17'
+          cache: 'maven'
 
       - name: Build Quarkus Native with Maven, Mandrel and Jib
         run: mvn -B package -Dnative $JIB_BUILD_OPTS
