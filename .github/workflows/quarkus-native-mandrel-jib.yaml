@@ -36,8 +36,8 @@ jobs:
       - name: GitHub Action for setting up Mandrel
         uses: graalvm/setup-graalvm@v1
         with:
-          version: 'mandrel-latest'
-          java-version: '19'
+          version: 'mandrel-22.1.0.0-Final'
+          java-version: '17'
           cache: 'maven'
 
       - name: Build Quarkus Native with Maven, Mandrel and Jib
