@@ -36,8 +36,8 @@ jobs:
       - name: GitHub Action for setting up GraalVM
         uses: graalvm/setup-graalvm@v1
         with:
-          version: '22.3.1'
-          java-version: '19'
+          version: 'latest'
+          java-version: '17'
           components: 'native-image'
           cache: 'maven'
 
