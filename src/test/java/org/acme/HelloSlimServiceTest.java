@@ -18,7 +18,7 @@ public class HelloSlimServiceTest {
   public void testHello() {
     final SlimReply reply = slimGrpc
         .helloSlim(SlimRequest.newBuilder().setName("Shady").build()).await().atMost(Duration.ofSeconds(5));
-    assertEquals("Hi, your Name is what? Your name is who? Your name is: SlimShady!", reply.getMessage());
+    assertEquals("Hi, your Name is what? Your name is who? Your name is: Slim Shady!", reply.getMessage());
   }
 
 }
