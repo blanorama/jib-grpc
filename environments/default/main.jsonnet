@@ -10,11 +10,11 @@ local httpIngressPath = k.networking.v1.httpIngressPath;
   _config:: {
     local config = self,
     domain: 'otlp-quarkus.mayflower.cloud',
-    tag: '0.1.4',
+    tag: '0.3.5',
     service: {
       name: 'otlp-quarkus',
       domain: config.domain,
-      image: 'ghcr.io/lecodeski/quarkus-native-mandrel-jib-otlp:%s' % config.tag,
+      image: 'ghcr.io/lecodeski/quarkus-native-mandrel-in-docker-jib-otlp:%s' % config.tag,
     },
   },
   microservice: {
