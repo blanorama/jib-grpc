@@ -1,4 +1,4 @@
-[![CI workflow badge](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-mandrel-jib.yaml/badge.svg)](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-mandrel-jib.yaml)
+[![quarkus-native-mandrel-in-docker-jib-otlp](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-mandrel-in-docker-jib-otlp.yaml/badge.svg?branch=otlp-in-docker)](https://github.com/lecodeski/containerize-java/actions/workflows/quarkus-native-mandrel-in-docker-jib-otlp.yaml)
 
 # Demo project for containerizing Java with Quarkus Native, Mandrel and Jib
 
