@@ -2,12 +2,14 @@
 # It caches/restores any maven dependency to improve the workflow execution time.
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
-name: quarkus-native-mandrel-jib-otlp
+name: quarkus-native-mandrel-in-docker-jib-otlp
 
 on: [ push, pull_request, workflow_dispatch ]
 
 env:
   JIB_BUILD_OPTS:
+    -Dquarkus.native.container-build=true
+    -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:22.3.2.1-Final-java17-amd64
     -Dquarkus.container-image.build=true
     -Dquarkus.container-image.push=true
     -Dquarkus.container-image.registry=ghcr.io
