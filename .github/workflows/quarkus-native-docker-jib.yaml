@@ -33,5 +33,13 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-maven-
 
+      - name: GitHub Action for setting up GraalVM
+        uses: graalvm/setup-graalvm@v1
+        with:
+          distribution: 'graalvm'
+          java-version: '20'
+          components: 'native-image'
+          cache: 'maven'
+
       - name: Build Quarkus Native with Maven, Docker and Jib
         run: mvn -B package -Dnative $JIB_BUILD_OPTS
