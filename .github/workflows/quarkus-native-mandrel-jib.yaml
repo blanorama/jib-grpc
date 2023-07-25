@@ -36,7 +36,7 @@ jobs:
       - name: GitHub Action for setting up Mandrel
         uses: graalvm/setup-graalvm@v1
         with:
-          version: 'mandrel-22.1.0.0-Final'
+          version: 'mandrel-latest'
           java-version: '17'
           cache: 'maven'
 
