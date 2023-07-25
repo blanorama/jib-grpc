@@ -10,6 +10,7 @@ env:
   JIB_BUILD_OPTS:
     -Dquarkus.native.container-build=true
     -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-20
+    -Dquarkus.native.additional-build-args=-march=compatibility
     -Dquarkus.container-image.build=true
     -Dquarkus.container-image.push=true
     -Dquarkus.container-image.registry=ghcr.io
