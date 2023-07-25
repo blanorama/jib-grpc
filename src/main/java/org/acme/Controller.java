@@ -9,7 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/hello")
-public class GreetingSlim {
+public class Controller {
 
   @GET
   @Produces(MediaType.TEXT_PLAIN)
