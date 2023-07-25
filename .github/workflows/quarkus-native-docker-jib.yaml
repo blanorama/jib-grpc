@@ -8,6 +8,8 @@ on: [ push, pull_request, workflow_dispatch ]
 
 env:
   JIB_BUILD_OPTS:
+    -Dquarkus.native.container-build=true
+    -Dquarkus.native.builder-image=quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-20
     -Dquarkus.container-image.build=true
     -Dquarkus.container-image.push=true
     -Dquarkus.container-image.registry=ghcr.io
